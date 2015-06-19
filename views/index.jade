@@ -1,0 +1,12 @@
+html
+	head
+		title Samples
+		style(type='text/css') .example { padding:5px; margin:5px; border: 1px solid #CCC; width:500px; text-align:center; float:left; text-decoration: none;}
+		style(type='text/css') #screen { max-height:100%; max-width:100%; min-height:100px; }
+	body
+		h1(style='text-align: center') List of Examples
+		div
+			- for (var i = 0; i < files.length; i++)
+				a.example(href='#{files[i]}')
+					h2(style="display:block; color:black; font-weight:bold; margin:10px; margin-bottom:20px;") #{files[i].split("-").join(" ")}
+					img#screen(src="#{files[i]}/thumbnail.png", alt="#{files[i].split('-').join(' ')}")
